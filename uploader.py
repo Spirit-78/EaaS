@@ -28,7 +28,7 @@ class EncService:
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('prva_strana.html')
 
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -37,7 +37,9 @@ def upload_file():
         f = request.files['certificate']
         f.save("certificates/" + secure_filename(f.filename))
         print('This is standard output', file=sys.stdout)
-        return '<p>file uploaded successfully<p>'
+        # '<p>file uploaded successfully<p>'
+        """check here for validity and call class object for key enc/dec"""
+        return render_template('vtora_strana.html')
     else:
         return '<p>something went wrong.</p>'
 
