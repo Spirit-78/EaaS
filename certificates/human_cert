@@ -8,8 +8,8 @@ Certificate:
           OU=Class 1 Public Primary Certification Authority, 
           CN=Best CA Ltd
         Validity
-          Not Before: Feb  5 19:50:16 2000 GMT
-          Not After : Feb  4 19:50:16 2001 GMT
+          Not Before: Feb  5 19:50:16 2020 GMT
+          Not After : Feb  4 19:50:16 2022 GMT
         Subject: C=GB, ST=Surrey, O=Best CA Ltd, 
           OU=Class 1 Public Primary Certification Authority, 
           CN=Best CA Ltd
