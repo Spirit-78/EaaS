@@ -43,20 +43,20 @@
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
-                    <form id="login-form" class="form" action="" method="post">
+                    <form id="login-form" class="form"  method="post" enctype = "multipart/form-data" action = "http://localhost:5000/doc_upload">
                         <h3 class="text-center text-info">Choose a file to encrypt/decrypt</h3>
                         <hr>
                         <div class="form-group text-center ">
-                            <input class="btn btn-info" type="file" id="formFile">
+                            <input class="btn" type="file" id="formFile" name="document">
                         </div>
 
                         <div class="container">
                             <div class="row" id="buttons">
                                 <div class="col">
-                                    <button class="btn btn-primary form-control btn-block">Encrypt</button>
+                                    <button class="btn btn-primary form-control btn-block" type="submit" name="action" value="Encrypt">Encrypt</button>
                                 </div>
                                 <div class="col">
-                                    <button id="btnSubmit" class="btn btn-danger form-control btn-block" type="submit">Decrypt</button>
+                                    <button class="btn btn-danger form-control btn-block" type="submit" name="action" value="Decrypt">Decrypt</button>
                                 </div>
                             </div>
                         </div>
