@@ -9,8 +9,8 @@
     }
     #login .container #login-row #login-column #login-box {
         margin-top: 120px;
-        max-width: 600px;
-        height: 320px;
+        max-width: 100%;
+        height: fit-content;
         border: 1px solid #9C9C9C;
         background-color: #EAEAEA;
     }
@@ -38,12 +38,12 @@
 </head>
 <body>
 <div id="login">
-    <h3 class="text-center text-white pt-5">Login form</h3>
+    <h3 class="text-center text-white pt-3 pb-3">Login form</h3>
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
-                    <form id="login-form" class="form"  method="post" enctype = "multipart/form-data" action = "http://localhost:5000/doc_upload">
+                    <form id="enc-dec-form" class="form"  method="post" enctype = "multipart/form-data" action = "http://localhost:5000/doc_upload">
                         <h3 class="text-center text-info">Choose a file to encrypt/decrypt</h3>
                         <hr>
                         <div class="form-group text-center ">
@@ -60,6 +60,19 @@
                                 </div>
                             </div>
                         </div>
+                    </form>
+                    <form style="padding:35px" id="text-input-form" class="form" method="post" action="http://localhost:5000/text_input" enctype = "multipart/form-data">
+                        <label for="text">Enter your text here: </label>
+                        <input type="text" name="text" id="text">
+                        <div class="row" id="button">
+
+                         <div class="col" style="padding:10px">
+                                    <button class="btn btn-primary form-control btn-block" type="submit" name="action" value="Encrypt">Encrypt</button>
+                                </div>
+                                <div class="col" style="padding:10px">
+                                    <button class="btn btn-danger form-control btn-block" type="submit" name="action" value="Decrypt">Decrypt</button>
+                                </div>
+                             </div>
                     </form>
                 </div>
             </div>

@@ -7,9 +7,6 @@ from cryptography.hazmat.backends import default_backend
 from Crypto.Hash import SHA
 import datetime
 
-#cert = x509.load_pem_x509_certificate(pem_data, default_backend())
-# cert.serial_number
-
 app = Flask(__name__)
 
 
@@ -18,6 +15,7 @@ class EncService:
         self.key = Fernet.generate_key()
         self.cert_hash = ''
         self.doc_name = ''
+        self.text = ''
 
     def set_cert_hash(self, cert_hash):
         self.cert_hash = cert_hash
@@ -25,8 +23,25 @@ class EncService:
     def set_doc_name(self, doc_name):
         self.doc_name = doc_name
 
+    def set_text_name(self, text_name):
+        self.text = text_name
+
     def get_doc_name(self):
         return self.doc_name
+
+    @staticmethod
+    def write_to_modified(data):
+        with open('modified/client_file', 'wb') as mod_file:
+            print(f"WRITING DATA: {data}", file=sys.stdout)
+            mod_file.write(data)
+
+    def process_text(self, action):
+        fernet = Fernet(self.key)
+        if action == 'Encrypt':
+            data = fernet.encrypt(self.text.encode('utf-8'))
+        else:
+            data = fernet.decrypt(self.text.encode('utf-8'))
+        self.write_to_modified(data)
 
     def write_key(self):
         with open('keys/keys.key', 'a') as keys_file:
@@ -49,16 +64,14 @@ class EncService:
         with open(f'documents/{self.doc_name}', 'r') as file:
             enc_data = fernet.encrypt(''.join(file.readlines()).encode('utf-8'))
             print('ENCRYPTING DATA: ', enc_data, file=sys.stdout)
-            with open(f'modified/client_file', 'wb') as enc_file:
-                enc_file.write(enc_data)
+            self.write_to_modified(enc_data)
 
     def decrypt_file(self):
         fernet = Fernet(self.key)
         with open(f'documents/{self.doc_name}', 'r') as file:
             dec_data = fernet.decrypt(''.join(file.readlines()).encode('utf-8'))
             print('DECRYPTING DATA: ', dec_data, file=sys.stdout)
-            with open('modified/client_file', 'wb') as dec_file:
-                dec_file.write(dec_data)
+            self.write_to_modified(dec_data)
 
 
 handler = EncService()
@@ -124,6 +137,16 @@ def decrypt():
     global handler
     handler.print_details()
     handler.decrypt_file()
+    return render_template('download_file.html')
+
+
+@app.route('/text_input', methods=['POST'])
+def text_input():
+    text = request.form['text']
+    print(f'INPUT TEXT: {text}', file=sys.stdout)
+    global handler
+    handler.set_text_name(text)
+    handler.process_text(request.form['action'])
     return render_template('download_file.html')
 
 
