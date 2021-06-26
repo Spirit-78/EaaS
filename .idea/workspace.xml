@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f5ec8d15-b9c9-4442-9c14-97087e925b1b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents/client_file" beforeDir="false" afterPath="$PROJECT_DIR$/documents/client_file" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keys/keys.key" beforeDir="false" afterPath="$PROJECT_DIR$/keys/keys.key" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modified/client_file" beforeDir="false" afterPath="$PROJECT_DIR$/modified/client_file" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents/client_file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modified/client_file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/download_file.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/download_file.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/uploader.py" beforeDir="false" afterPath="$PROJECT_DIR$/uploader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uploader.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
-              <caret line="116" column="40" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="40" />
+              <caret line="135" column="23" lean-forward="true" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
               <folding>
                 <element signature="e#0#70#0" expanded="true" />
               </folding>
@@ -28,11 +28,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/download_file.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="80" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="80" />
+            <state relative-caret-position="187">
+              <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,12 +53,7 @@
         <entry file="file://$PROJECT_DIR$/templates/vtora_strana.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-136">
-              <caret line="45" column="70" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="70" />
-              <folding>
-                <element signature="n#style#0;n#form#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="45" column="70" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
             </state>
           </provider>
         </entry>
@@ -63,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/prva_strana.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="45" column="163" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="163" />
+            <state relative-caret-position="340">
+              <caret line="45" column="163" selection-start-line="44" selection-start-column="112" selection-end-line="45" selection-end-column="163" />
               <folding>
                 <element signature="n#style#0;n#html#0;n#!!top" />
                 <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -106,9 +104,9 @@
         <option value="$PROJECT_DIR$/links" />
         <option value="$PROJECT_DIR$/templates/not_valid.html" />
         <option value="$PROJECT_DIR$/templates/prva_strana.html" />
-        <option value="$PROJECT_DIR$/templates/download_file.html" />
         <option value="$PROJECT_DIR$/templates/vtora_strana.html" />
         <option value="$PROJECT_DIR$/uploader.py" />
+        <option value="$PROJECT_DIR$/templates/download_file.html" />
       </list>
     </option>
   </component>
@@ -201,9 +199,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49960724" weight="0.3287879" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.35478806" side_tool="true" visible="true" weight="0.4121212" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.35635793" side_tool="true" visible="true" weight="0.4287879" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3287879" />
-      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.64521194" weight="0.3242424" />
+      <window_info anchor="bottom" id="Python Console" order="10" sideWeight="0.64364207" weight="0.3242424" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -232,8 +230,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/prva_strana.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="45" column="163" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="163" />
+        <state relative-caret-position="340">
+          <caret line="45" column="163" selection-start-line="44" selection-start-column="112" selection-end-line="45" selection-end-column="163" />
           <folding>
             <element signature="n#style#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -261,28 +259,26 @@
     <entry file="file://$PROJECT_DIR$/templates/vtora_strana.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-136">
-          <caret line="45" column="70" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="70" />
-          <folding>
-            <element signature="n#style#0;n#form#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#form#1;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/download_file.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="80" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="80" />
+          <caret line="45" column="70" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uploader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="116" column="40" selection-start-line="116" selection-start-column="25" selection-end-line="116" selection-end-column="40" />
+          <caret line="135" column="23" lean-forward="true" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
           <folding>
             <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/download_file.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="58" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

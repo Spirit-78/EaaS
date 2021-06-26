@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, send_file
+from flask import Flask, render_template, request, redirect, send_file, send_from_directory
 from werkzeug.utils import secure_filename
 import sys
 from cryptography.fernet import Fernet
@@ -6,13 +6,15 @@ from cryptography import x509
 from cryptography.hazmat.backends import default_backend
 from Crypto.Hash import SHA
 import datetime
+import os.path
+import time
 
 app = Flask(__name__)
 
 
 class EncService:
     def __init__(self):
-        self.key = Fernet.generate_key()
+        self.key = b''
         self.cert_hash = ''
         self.doc_name = ''
         self.text = ''
@@ -30,7 +32,7 @@ class EncService:
         return self.doc_name
 
     def write_to_modified(self, data):
-        with open('modified/client_file', 'wb') as mod_file:
+        with open('modified/client_file.txt', 'wb') as mod_file:
             print(f"WRITING DATA TO MODIFIED: {data}", file=sys.stdout)
             self.print_details()
             mod_file.write(data)
@@ -44,6 +46,7 @@ class EncService:
         self.write_to_modified(data)
 
     def write_key(self):
+        self.key = Fernet.generate_key()
         with open('keys/keys.key', 'a') as keys_file:
             print('WRITING KEY: ', self.key, 'WRITING CERT_HASH: ', self.cert_hash, file=sys.stdout)
             keys_file.write('\n' + self.cert_hash + ":" + self.key.decode('latin1'))
@@ -63,8 +66,9 @@ class EncService:
         fernet = Fernet(self.key)
         with open(f'documents/{self.doc_name}', 'r') as file:
             enc_data = fernet.encrypt(''.join(file.readlines()).encode('utf-8'))
-            print('ENCRYPTING DATA: ', enc_data, file=sys.stdout)
+            print(f"ENCRYPTED DATA: {enc_data}", file=sys.stdout)
             self.write_to_modified(enc_data)
+
 
     def decrypt_file(self):
         fernet = Fernet(self.key)
@@ -123,13 +127,17 @@ def encrypt():
     global handler
     handler.print_details()
     handler.encrypt_file()
+    while not os.path.exists('modified/client_file.txt'):
+        time.sleep(1)
     return render_template('download_file.html')
 
 
-@app.route('/<path:filename>', methods=['GET', 'POST'])
+@app.route('/file/<path:filename>', methods=['GET', 'POST'])
 def download(filename):
     print('filename: ', filename, file=sys.stdout)
-    return send_file('modified/client_file', as_attachment=True)
+    while not os.path.exists('modified/client_file.txt'):
+        time.sleep(1)
+    return send_from_directory('modified', path='client_file.txt', as_attachment=True)
 
 
 @app.route('/decrypt')
@@ -137,6 +145,8 @@ def decrypt():
     global handler
     handler.print_details()
     handler.decrypt_file()
+    while not os.path.exists('modified/client_file.txt'):
+        time.sleep(1)
     return render_template('download_file.html')
 
 
