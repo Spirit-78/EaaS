@@ -29,10 +29,10 @@ class EncService:
     def get_doc_name(self):
         return self.doc_name
 
-    @staticmethod
-    def write_to_modified(data):
+    def write_to_modified(self, data):
         with open('modified/client_file', 'wb') as mod_file:
-            print(f"WRITING DATA: {data}", file=sys.stdout)
+            print(f"WRITING DATA TO MODIFIED: {data}", file=sys.stdout)
+            self.print_details()
             mod_file.write(data)
 
     def process_text(self, action):
@@ -52,7 +52,7 @@ class EncService:
         with open('keys/keys.key', 'r') as key_file:
             for line in key_file.readlines():
                 if line.split(':')[0] == self.cert_hash:
-                    self.key = line.split(':')[1].encode('utf-8')
+                    self.key = line.split(':')[1].rstrip('\n').encode('utf-8')
                     return
         self.write_key()
 
